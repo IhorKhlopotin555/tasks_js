@@ -60,7 +60,7 @@ if (persentage > 100){
     console.log(totalAmount);
     console.log(totalProfit);
 }}
-console.log(calculateProfit());
+console.log(calculateProfit())
 
 
 // let amount = prompt('write your amount')
