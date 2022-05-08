@@ -60,7 +60,10 @@ const casino = () => {
             }
         }
             else{
-                alert("You did not become a billionaire, but can.");
+              let askfin =  confirm("Thank you for game, you won 50$."+'\n'+'Do you want play again?');
+              if(askfin === true){
+                  casino()
+              }
             }
     }
         else {

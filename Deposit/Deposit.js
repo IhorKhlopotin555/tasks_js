@@ -12,72 +12,30 @@
 // 5. If input data isn’t valid, you should show message “Invalid input data”. (Use “alert” function).
 // 6. You need to calculate total profit and total amount.
 // 7. Show message: (example). Use ”alert” function
-// Initial amount: 1000
-// Number of years: 3
-// Percentage of year: 10
-// Total profit: 331.00
-// Total amount: 1331.00
-// You should show only 2 numbers after comma (if needed).
-// Number of years can be only integers.
-// let amount = prompt('write your amount')
-// if (amount < 1000){
-//     alert('Invalid input data');
-// }
-// let years = prompt('write your years')
-// if (years < 1){
-//     alert('Invalid input data');
-// }
-// let persentage = prompt('write your persentage')
-// if (persentage > 100){
-//     alert('Invalid input data');
-// }
-// sum = 0
-// for (i = 0; i <= year; i++){
-//     let profit = amount * persentage / 100
-//     amount += profit
-//     sum += profit
-// }
-// console.log(sum);
+
 
 const calculateProfit = () => {
 
-let amount = prompt('write your amount')
+let amount = parseFloat(prompt('Enter your amount:'))
 if (amount < 1000){
     alert('Invalid input data');
 }
-let years = prompt('write your years')
+let years = parseFloat(prompt('Enter your years:'))
 if (years < 1){
     alert('Invalid input data');
 }
-let persentage = prompt('write your persentage')
-if (persentage > 100){
+let persentage = parseFloat(prompt('Enter your persentage:'))
+if (persentage > 100) {
     alert('Invalid input data');
+}
+    for (let i = 1; i <= years; i++) {
+        let totalProfit = (amount * persentage / 100)
+        amount += totalProfit
+        alert('Total profit:' + `${totalProfit.toFixed(2)}` +'('+`${persentage}`+'% from initial amount)' + '\n'+'Total amount:' + `${amount.toFixed(2)}`+' (initial amount + total profit)'+`\n`+ 'Year:' + `${i}`)
+        }
 
-    for (let i = 0; i < years; i++) {
-        let totalProfit = amount * persentage / 100;
-        amount += totalProfit;
-    }
-    console.log(totalAmount);
-    console.log(totalProfit);
-}}
-console.log(calculateProfit())
+}
+calculateProfit()
 
 
-// let amount = prompt('write your amount')
-// if (amount < 1000){
-//     alert('Invalid input data');
-// }
-// let years = prompt('write your years')
-// if (years < 1){
-//     alert('Invalid input data');
-// }
-// let persentage = prompt('write your persentage')
-// if (persentage > 100){
-//     alert('Invalid input data');
-// }
-// for (let i = 0; i < years; i++) {
-//     let delta = amount * persentage / 100;
-//     amount += delta;
-// }
-// document.write(amount);
 
