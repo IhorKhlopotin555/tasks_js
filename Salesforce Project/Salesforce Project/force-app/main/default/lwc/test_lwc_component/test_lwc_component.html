@@ -1,0 +1,35 @@
+<template>
+    <c-modal-popup-l-w-c is-modal-open={isModalOpened} onmodalclose={handleModalClose}></c-modal-popup-l-w-c>
+<div>
+    <lightning-card title="Tasks Management List" icon-name="standard:action_list_component"> 
+       
+        <div class ="headerwrap">
+        <div class="sortdateWrap">
+        <div class="input_item d-flex">
+            <lightning-input type="date" onchange={handlerFirstDate} label="First Date"></lightning-input>
+        </div>
+        <div class="input_item d-flex">
+            <lightning-input type="date" onchange={handlerSecondDate} label="Second Date"></lightning-input>
+        </div>
+        <lightning-button variant="brand" label="Sort by date" title="Submit" onclick={buttonDate} class="slds-m-left_x-small"></lightning-button>
+        </div>
+
+        <lightning-button variant="brand" label="New Task" title="New" onclick={handleOpenModal} class="slds-m-left_x-small"></lightning-button>
+        </div>
+
+        <div style="height: 100%;">
+            <template if:true={data}>
+                <lightning-datatable data={data} columns={columns} key-field="id" hide-checkbox-column="true"
+                    onrowaction={handleRowActions}></lightning-datatable>
+            </template>
+</div>
+
+</lightning-card>
+
+</div>
+<div class="customPagination">
+    <template for:each={paginationRange} for:item="pageNumber">
+            <a onclick={handlePaginationClick} key={pageNumber} data-target-number={pageNumber}>{pageNumber}</a>
+        </template>
+</div>
+</template>
